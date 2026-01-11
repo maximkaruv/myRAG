@@ -16,10 +16,15 @@ class Settings(BaseSettings):
     GENERATIVE_MODEL: str = Field(default="deepseek-chat", env="GENERATIVE_MODEL")
     
     # RAG Settings
-    SYSTEM_PROMPT: str = "You are a helpful assistant. Use the provided context to answer the user's question. If you don't know the answer, say that you don't know."
+    SYSTEM_PROMPT: str = "You are a helpful assistant. Use the provided context (including metadata like title, source, and role) to answer the user's question. If you don't know the answer, say that you don't know."
     VECTOR_DIMENSION: int = 1536  # Default for text-embedding-3-small
+    
+    # Storage Settings
+    INDEX_PATH: str = "database/faiss_index.bin"
+    DOCS_PATH: str = "database/documents.json"
     
     class Config:
         env_file = ".env"
 
 settings = Settings()
+
