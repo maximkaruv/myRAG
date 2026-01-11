@@ -1,0 +1,22 @@
+meta {
+  name: Add document
+  type: http
+  seq: 2
+}
+
+post {
+  url: http://localhost:8000/documents
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "text": "Париж ужасен 2"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}

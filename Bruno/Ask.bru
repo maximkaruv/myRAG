@@ -1,0 +1,22 @@
+meta {
+  name: Ask
+  type: http
+  seq: 3
+}
+
+post {
+  url: http://localhost:8000/ask
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+    "question": "Каков париж?"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
